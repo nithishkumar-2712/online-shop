@@ -1,0 +1,132 @@
+.profile-containerr{
+    display:flex;
+    min-height:100vh;
+    background:linear-gradient(135deg,#020617,#0f172a);
+    color:white;
+}
+
+/* LEFT SIDE */
+.profile-left{
+    width:30%;
+    background:#111827;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+    border-right:1px solid #1f2937;
+}
+
+.profile-left img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:4px solid #22c55e;
+    margin-bottom:15px;
+}
+
+.profile-left h2{
+    margin-bottom:5px;
+}
+
+.profile-left p{
+    color:#9ca3af;
+    margin-bottom:20px;
+}
+
+.edit-btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#22c55e;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* RIGHT SIDE */
+.profile-right{
+    width:70%;
+    padding:50px;
+}
+
+.profile-right h2{
+    margin-bottom:30px;
+    border-bottom:2px solid #22c55e;
+    display:inline-block;
+    padding-bottom:5px;
+}
+
+/* INFO BOX */
+.info-box{
+    background:#111827;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:0.3s;
+}
+
+.info-box:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 10px #22c55e;
+}
+
+.info-box span{
+    color:#9ca3af;
+}
+
+.info-box p{
+    font-weight:bold;
+}
+/* MOBILE RESPONSIVE */
+@media (max-width:768px){
+
+    .profile-container{
+        flex-direction:column;
+    }
+
+    /* LEFT SIDE */
+    .profile-left{
+        width:100%;
+        border-right:none;
+        border-bottom:1px solid #1f2937;
+        padding:20px;
+    }
+
+    .profile-left img{
+        width:100px;
+        height:100px;
+    }
+
+    .profile-left h2{
+        font-size:18px;
+    }
+
+    /* RIGHT SIDE */
+    .profile-right{
+        width:100%;
+        padding:20px;
+    }
+
+    .profile-right h2{
+        font-size:20px;
+    }
+
+    /* INFO BOX */
+    .info-box{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+
+    .info-box span{
+        font-size:12px;
+    }
+
+    .info-box p{
+        font-size:14px;
+    }
+}

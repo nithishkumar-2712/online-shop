@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  
+  min-height: 100vh;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  padding: 30px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.icon {
+  font-size: 50px;
+  color: #2ecc71;
+}
+
+.header h1 {
+  color: #2ecc71;
+  font-size: 22px;
+}
+
+.header p {
+  color: #555;
+}
+
+.order-info h2 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.products {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin: 10px 0;
+}
+
+.product-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.product-row img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.product-details {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.product-details .name {
+  font-weight: 500;
+  color: #333;
+}
+
+.product-details .qty {
+  font-size: 14px;
+  color: #777;
+}
+
+.price {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.total, .delivery {
+  margin-top: 10px;
+  color: #555;
+  font-weight: 500;
+}
+
+.address {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.address h2 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.address p {
+  color: #555;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.primary {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.primary:hover {
+  background: #27ae60;
+}
+
+.secondary {
+  background: #f1f1f1;
+}
+
+.secondary:hover {
+  background: #ddd;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .product-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .product-details {
+    margin-left: 0;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}

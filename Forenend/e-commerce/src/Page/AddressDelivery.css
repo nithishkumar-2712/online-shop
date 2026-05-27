@@ -1,0 +1,101 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fdf9f7;
+  margin: 0;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Form Section */
+.form-section {
+  flex: 2;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.Shippingtitle{
+  color: black;
+  font-weight:800;
+}
+.Paymenttitle{
+    color: black;
+  font-weight:800;
+}
+/* Inputs */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Payment */
+.payment label {
+  display: block;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+/* Summary Section */
+.summary {
+  flex: 1;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Total */
+.total {
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+/* Button */
+.Orderbutton {
+  width: 100%;
+  padding: 12px;
+  background: #39e979;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.OrderSummary{
+  color: #16a34a;
+  font-weight:800;
+  text-shadow: 0px 0px 2px black ;
+}
+
+.Orderbutton:hover {
+  background:linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

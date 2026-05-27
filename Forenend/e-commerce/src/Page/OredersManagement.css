@@ -1,0 +1,588 @@
+.orders-page {
+  margin-top:30px;
+  padding: 20px;
+}
+/* ================= TABLE LOADING SKELETON ================= */
+
+.sk-row-table .sk-cell {
+  height: 18px;
+  width: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg,#eee,#f5f5f5,#eee);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.orders-page h2 {
+  margin-bottom: 20px;
+}
+
+/* Table */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.orders-table th {
+  background: #f9fafb;
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.orders-table td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+
+/* Status */
+.status {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+.Cancelled {
+  background: red;
+  color:black;
+}
+
+.delivered {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* Buttons */
+.view {
+  background: #3b82f6;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.update {
+  background: #22c55e;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* =======================
+   TABLE BASE (no design change)
+======================= */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* =======================
+   📱 MOBILE TABLE SCROLL FIX
+======================= */
+@media (max-width: 1144px) {
+  .orders-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* =======================
+   📱 SMALL SCREEN BUTTON FIX
+======================= */
+@media (max-width: 600px) {
+  .orders-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .view,
+  .update {
+    padding: 5px 8px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}
+
+/* =======================
+   📱 STATUS BADGE FIX
+======================= */
+@media (max-width: 600px) {
+  .status {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+/* =======================
+   📱 HEADER SPACING FIX
+======================= */
+@media (max-width: 600px) {
+  .orders-page h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+}
+/* OVERLAY */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* MAIN MODAL */
+.order-modal {
+  background: white;
+  width: 90%;
+  max-width: 700px;
+  padding: 20px;
+  border-radius: 16px;
+  animation: pop 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* HEADER */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close {
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* GRID LAYOUT */
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* CARD STYLE */
+.card {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.card h4 {
+  margin-bottom: 10px;
+  color: #111;
+}
+
+/* ANIMATION */
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* hover effect */
+select:hover {
+  border-color: #999;
+}
+
+/* focus effect */
+select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+/* option styling (limited support but ok) */
+option {
+  padding: 10px;
+}
+
+/* optional: different colors for status feel */
+option[value="Placed"] {
+  color: #555;
+}
+
+option[value="Shipped"] {
+  color: #1e90ff;
+}
+
+option[value="Delivered"] {
+  color: #28a745;
+}
+
+option[value="Cancelled"] {
+  color: #dc3545;
+}
+.invoice {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.invoice-section {
+  width: 500px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #invoice-content,
+  #invoice-content * {
+    visibility: visible;
+  }
+
+  #invoice-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+/* PAGE */
+
+.orders-page {
+  padding: 20px;
+}
+
+.orders-page h2 {
+  margin-bottom: 20px;
+}
+
+/* TABLE */
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.orders-table th {
+  background: #f5f5f5;
+}
+
+/* STATUS */
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+.pending {
+  background: orange;
+}
+
+.Cancelled {
+  background: red;
+}
+
+.delivered {
+  background: green;
+}
+
+/* BUTTONS */
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.view,
+.update,
+.delete,
+.invoice {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.view {
+  background: #3498db;
+}
+
+.update {
+  background: #f39c12;
+}
+
+.delete {
+  background: #e74c3c;
+}
+
+.invoice {
+  background: #27ae60;
+}
+
+/* MODAL */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.order-modal {
+  background: white;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* HEADER */
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* GRID */
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* CARD */
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.card h4 {
+  margin-bottom: 10px;
+}
+
+/* UPDATE BUTTONS */
+
+.update-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+/* INVOICE */
+
+.invoice-section {
+  width: 700px;
+}
+
+.invoice-header {
+  text-align: center;
+}
+
+.invoice-user,
+.invoice-payment {
+  margin-top: 20px;
+}
+
+/* PRODUCT TABLE */
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.invoice-table th {
+  background: #f5f5f5;
+}
+
+/* TOTAL */
+
+.invoice-total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* PRINT */
+
+.print-btn {
+  margin-top: 20px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #invoice-content,
+  #invoice-content * {
+    visibility: visible;
+  }
+
+  #invoice-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .print-btn,
+  .close {
+    display: none;
+  }
+}
+/* =========================
+   SIDEBAR FIX
+========================= */
+
+.orders-page{
+  margin-left: 270px;
+  transition: 0.3s;
+  min-height: 100vh;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .orders-page{
+    margin-left: 85px;
+  }
+
+}
+/* FILTER SECTION */
+.filter-box {
+  width: 250px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-box label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+.filter-select {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.filter-select:hover {
+  border-color: #2ecc71;
+}
+
+.filter-select:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.15);
+}
+.empty-order {
+  text-align: center;
+  padding: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #888;
+  width:100%;
+}

@@ -1,0 +1,191 @@
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.pro-container {
+  padding: 40px;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #0b1220,
+    #0f172a,
+    #020617
+  );
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pro-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.pro-header p {
+  color: #94a3b8;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* =========================
+   MAIN CARD (GLASS EFFECT)
+========================= */
+
+.pro-card {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+
+  padding: 20px;
+  overflow-x: auto;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+th {
+  text-align: left;
+  padding: 14px;
+  color: black;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color:black;
+}
+
+/* =========================
+   PRODUCT NAME
+========================= */
+
+.name {
+  font-weight: 600;
+  color: white;
+}
+
+/* =========================
+   REVENUE & PROFIT
+========================= */
+
+.revenue {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.profit {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* =========================
+   STOCK
+========================= */
+
+.stock {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.low {
+  background: #ef4444;
+  color: white;
+}
+
+.good {
+  background: #22c55e;
+  color: white;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hot {
+  background: linear-gradient(45deg, #f97316, #ef4444);
+  color: white;
+}
+
+.normal {
+  background: #334155;
+  color: #cbd5e1;
+}
+
+/* =========================
+   SUMMARY BOXES
+========================= */
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.box {
+  background: rgba(255,255,255,0.05);
+  border-left: 5px solid #3b82f6;
+ box-shadow:0px 0px 10px 2px #333;
+
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.box h3 {
+  color: black;
+  font-size: 14px;
+}
+
+.box p {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: black;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .pro-container {
+    padding: 15px;
+  }
+
+  .pro-header h1 {
+    font-size: 22px;
+  }
+
+  table {
+    min-width: 550px;
+  }
+}

@@ -1,0 +1,16 @@
+const express= require("express");
+const {Register,Login,Admin,getUser,profile,logoutUser,DeleteUser,blockUnblockUser} = require("../controllers/Registercontrollers");
+const Loginratelimit = require("../middleware/Rate-limit");
+const Athucheck = require("../middleware/Athu");
+const Admincheck = require("../middleware/Admin");
+const route=express.Router();
+route.post("/register",Register);
+route.post("/login",Loginratelimit,Login);
+route.get("/profile",Athucheck,profile);
+route.get("/tokencheck",Athucheck,profile);
+route.post("/logout",logoutUser);
+route.get("/getUser",Athucheck,Admincheck,getUser);
+route.get("/Admin",Athucheck,Admincheck,Admin);
+route.delete("/DeleteUser/:id",Athucheck,Admincheck,DeleteUser);
+route.put("/updateuser/:id",Athucheck,Admincheck,blockUnblockUser);
+module.exports=route;
