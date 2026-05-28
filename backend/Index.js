@@ -87,11 +87,13 @@ connect();
 // }));
 app.use("/public",express.static("public"))
 app.use(
-    cors({
-        origin: [process.env.URL,"http://10.131.211.250:5173"],     
-        methods:["GET","POST","PUT","DELETE"],
-        credentials: true,           
-    })
+    cors(
+    //     {
+    //     origin: [process.env.URL,"http://10.131.211.250:5173"],     
+    //     methods:["GET","POST","PUT","DELETE"],
+    //     credentials: true,           
+    // }
+)
 );
 app.use(express.json());
 app.use(compression({
@@ -110,7 +112,6 @@ app.use(Order);
 app.use(tax);
 app.use(Returnrequest);
 app.use(favourite);
-const PORT=4000;
-app.listen(PORT, "0.0.0.0",()=>{
-    console.log(`Server is runing in this ${PORT}`);
+app.listen(process.env.PORT || 4000, "0.0.0.0",()=>{
+    console.log(`Server is runing in this ${process.env.PORT || 4000}`);
 });
