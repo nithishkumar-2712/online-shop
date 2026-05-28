@@ -321,7 +321,7 @@ const DeleteItems = async(id) => {
             <td><span className="in-stock">{items.Stock}</span></td>
             <td style={{ display: "flex", gap: "8px", alignItems: "center" }}>
               <button
-                className="view-btn"
+                className="view-btnn"
                 onClick={() => {
                   setSelectedProduct(items);   // 🔥 full object save
                   setShowModal(true);
@@ -331,13 +331,13 @@ const DeleteItems = async(id) => {
               </button>
 
               <button
-                className="delete-btn"
+                className="delete-btnn"
                 onClick={() => DeleteItems(items._id)}
               >
                 {items.check ? "Delete" : "Restore"}
               </button>
               <button
-                className="update-btn"
+                className="update-btnn"
                 onClick={() => Handleupdata(items)}
               >
                 Update

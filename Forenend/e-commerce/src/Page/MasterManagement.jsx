@@ -240,6 +240,8 @@ function MasterManagement() {
             <tr>
               <th>S.No</th>
               <th>Brand</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
           </thead>
 
@@ -252,8 +254,13 @@ function MasterManagement() {
                 <td>{index + 1}</td>
 
                 <td>{item.BrandName}</td>
+                <td className="action-cell">
+                  <button className="edit-btnn">Update</button>
+                  <button className="delete-btnn">Delete</button>
+                </td>
 
               </tr>
+              
 
             ))}
 
@@ -292,6 +299,8 @@ function MasterManagement() {
             <tr>
               <th>S.No</th>
               <th>Category</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
           </thead>
 
@@ -304,6 +313,10 @@ function MasterManagement() {
                 <td>{index + 1}</td>
 
                 <td>{item.categoryName}</td>
+                <td className="action-cell">
+                  <button className="edit-btnn">Update</button>
+                  <button className="delete-btnn">Delete</button>
+                </td>
 
               </tr>
 
@@ -354,6 +367,8 @@ function MasterManagement() {
               <th>S.No</th>
               <th>Tax Name</th>
               <th>Percentage</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
           </thead>
 
@@ -368,6 +383,10 @@ function MasterManagement() {
                 <td>{item.taxName}</td>
 
                 <td>{item.taxValue}%</td>
+                <td className="action-cell">
+                  <button className="edit-btnn">Update</button>
+                  <button className="delete-btnn">Delete</button>
+                </td>
 
               </tr>
 
@@ -418,6 +437,8 @@ function MasterManagement() {
               <th>S.No</th>
               <th>Discount</th>
               <th>Percentage</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
           </thead>
 
@@ -432,6 +453,10 @@ function MasterManagement() {
                 <td>{item.discountName}</td>
 
                 <td>{item.discountValue}%</td>
+                <td className="action-cell">
+                  <button className="edit-btnn">Update</button>
+                  <button className="delete-btnn">Delete</button>
+                </td>
 
               </tr>
 
