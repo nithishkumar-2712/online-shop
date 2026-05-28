@@ -3,7 +3,7 @@ const CreateOrder = async (req, res) => {
   try {
     const {fullName,mobile,address,pincode,products,subtotal,discount,total,paymentMode,expectedDelivery,productId} = req.body;
     const UserId=req.body.userId;
-    console.log(productId);
+    // console.log(productId);
     const orderId=`ORD-${Date.now()}-${Math.random().toString(36).substring(2,6)}`;
     // console.log(orderId)
     // Validation check
@@ -12,7 +12,7 @@ const CreateOrder = async (req, res) => {
     }
 
     const data = await OrederModel.create({productId,fullName,mobile,address,pincode,products,subtotal,discount,total,paymentMode,expectedDelivery,orderId,UserId});
-    console.log(data);
+    // console.log(data);
     res.status(201).json({
       success:true,
       message: "Order placed successfully",
@@ -20,7 +20,7 @@ const CreateOrder = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("Error creating order:", error);
+    // console.error("Error creating order:", error);
     return res.status(500).json({  success:true,message: "Server Error", error: error.message });
   }
 };

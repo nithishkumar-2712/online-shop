@@ -18,7 +18,6 @@ const Cart = require("./Routes/CartRoute");
 const discount = require("./Routes/DiscountRoute");
 const Brand = require("./Routes/BrandRoute");
 const tax = require("./Routes/TaxRoute");
-const Delivery= require("./Routes/DeliveryRoute")
 const favourite=require("./Routes/wish favouriteRoute");
 const compression=require("compression");
 const Order = require("./Routes/OrderSuccess");
@@ -88,11 +87,11 @@ connect();
 app.use("/public",express.static("public"))
 app.use(
     cors(
-    //     {
-    //     origin: [process.env.URL,"http://10.131.211.250:5173"],     
-    //     methods:["GET","POST","PUT","DELETE"],
-    //     credentials: true,           
-    // }
+        {
+        origin: [process.env.URL,"http://10.131.211.250:5173"],     
+        methods:["GET","POST","PUT","DELETE"],
+        credentials: true,           
+    }
 )
 );
 app.use(express.json());
@@ -102,7 +101,6 @@ app.use(compression({
 app.use(cookiParser());
 app.use(Register);
 app.use(Review);
-app.use(Delivery)
 app.use(category);
 app.use(Product);
 app.use(Cart);
@@ -112,6 +110,6 @@ app.use(Order);
 app.use(tax);
 app.use(Returnrequest);
 app.use(favourite);
-app.listen(process.env.PORT || 4000, "0.0.0.0",()=>{
+app.listen(process.env.PORT, "0.0.0.0",()=>{
     console.log(`Server is runing in this ${process.env.PORT || 4000}`);
 });

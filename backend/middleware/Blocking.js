@@ -11,7 +11,7 @@
             if(decode.id){
                 req.body=req.body||{};
                 const userblocking=await registerModel.findById(decode.id);
-                console.log(userblocking)
+                // console.log(userblocking)
                 if(userblocking.isBlocked ===true){
                     next();
                 }else{

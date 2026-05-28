@@ -2,12 +2,12 @@ const favouriteModel =require("../Model/wish favourite");
 const  favourite=async(req,res)=>{
     const {favouriteId} =req.body;
 
-    console.log(favouriteId);
+    // console.log(favouriteId);
     const userId =req.body.userId;
     
-    console.log(userId);
+    // console.log(userId);
     const userName =req.body.userName;
-    console.log(userName);
+    // console.log(userName);
     try {
         if(!favouriteId){
             return res.json({success:false,message:"Chect the Produect"});

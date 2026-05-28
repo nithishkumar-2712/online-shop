@@ -1,10 +1,10 @@
 const registerModel = require("../Model/Register");
 const Admincheck=async(req,res,next)=>{
     const userId=req.body.userId;
-    console.log(`Admin  check ${userId}`)
+    // console.log(`Admin  check ${userId}`)
     try {
         const user=await registerModel.findById(userId);
-        console.log(user.role);
+        // console.log(user.role);
         if(user.role==="Admin"){
             next()
         }else{

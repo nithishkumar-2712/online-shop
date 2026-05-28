@@ -4,7 +4,7 @@ const reviewModel = require("../Model/Review.js");
   try {
     const { product, rating, comment } = req.body;
     const UserId=req.body.userId;
-    console.log(req.body)
+    // console.log(req.body)
 
     if (!product || !rating || !comment) {
       return res.status(400).json({ message: "All fields required" });

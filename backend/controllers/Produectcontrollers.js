@@ -228,9 +228,9 @@ const updateProduct = async (req, res) => {
   try {
     const { editId } = req.params;
 
-    console.log("ID:", editId);
-    console.log("BODY:", req.body);
-    console.log("FILE:", req.file);
+    // console.log("ID:", editId);
+    // console.log("BODY:", req.body);
+    // console.log("FILE:", req.file);
 
     const {
       productname,
