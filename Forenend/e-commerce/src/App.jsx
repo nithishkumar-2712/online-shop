@@ -32,6 +32,7 @@ import AdminNavbar from "./components/AdminNavbar";
 import Adminprofil from "./Page/Adminprofil";
 import Orderreturn from "./Page/Orderreturn";
 import MasterManagement from "./Page/MasterManagement";
+import Footersection from "./components/Footersection";
 export const AppContext=createContext()
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -134,6 +135,7 @@ const tokencheck = async () => {
               element={<Profile />}
             />
           </Routes>
+          <Footersection/>
         </BrowserRouter>
     </AppContext.Provider>
       <ToastContainer
