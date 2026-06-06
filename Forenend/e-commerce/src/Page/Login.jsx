@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import "./Login.css";
+import "./login.css";
 import { useForm } from 'react-hook-form';
 import axios from '@/Config/axios';
 import { toast } from 'react-toastify';
