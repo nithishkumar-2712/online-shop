@@ -1,6 +1,6 @@
 import Axios from "axios";
 const axios = Axios.create({
-  baseURL:"https://online-shop-11.onrender.com",
+  baseURL:"https://backenapi-ne3o.onrender.com",
   withCredentials: true,
 });
 export default axios;
