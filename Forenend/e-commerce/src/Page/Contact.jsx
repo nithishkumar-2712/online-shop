@@ -21,11 +21,11 @@ function Contact() {
                Madurai Airport, Madurai – 625022,<br />
                Tamil Nadu, India</p>
 
-            <h4><a href='tel:+914522690717'>Call: +91‑452‑2690717</a></h4>
+            <h4><a href='tel:+914522690717'>Call: +91‑8925196712</a></h4>
 
             <p>
               <strong>Email:</strong>
-              <a href='mailto:apdmadurai@aai.aero'>apdmadurai@aai.aero</a>
+              <a href='mailto:apdmadurai@aai.aero'>nithikumar@gmail.com</a>
             </p>
 
             <p>
