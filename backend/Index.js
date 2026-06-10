@@ -87,10 +87,7 @@ connect();
 app.use("/public",express.static("public"))
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://your-frontend.vercel.app"
-    ],
+    origin:"*",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
