@@ -33,7 +33,7 @@ const Login=async(req,res)=>{
             return res.json({success:false,message:"Password is incorrect"});
         }
         const token=jwt.sign({id:User._id},process.env.JWT_SECRET,{expiresIn:"8d"});
-        res.cookie("token", token, {httpOnly: true,sameSite: "strict",maxAge: 8 * 24 * 60 * 60 * 1000,  });
+        res.cookie("token", token, {httpOnly: true,sameSite: "none",secure: true,maxAge: 8 * 24 * 60 * 60 * 1000,  });
         res.json({success:true,role: User.role,message:"User successfully Login"})
     } catch (error) {
         res.json({success:false,message:`unsuccessfully user Login${error.message}`})

@@ -115,7 +115,7 @@ function Navbar() {
             <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
              alt="user" className="modal-img"/>
 
-            <h3>John Doe</h3>
+            <h3>My-Profile</h3>
             {isLoggedIn ?(
               <>
                 <button className="modal-btn view"  onClick={() =>{navigate("/profile"),setProfileOpen(false)}}>View Profile</button>
