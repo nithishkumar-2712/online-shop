@@ -121,11 +121,11 @@ const blockUnblockUser=async(req,res)=>{
 }
 const logoutUser = async (req, res) => {
   try {
-res.clearCookie("token", {
+res.cookie("token", token, {
   httpOnly: true,
-  secure: false,
-  sameSite: "lax",
-  path: "/"   // ✅ MUST MATCH
+  sameSite: "none",
+  secure: true,
+  maxAge: 8 * 24 * 60 * 60 * 1000,
 });
 
     return res.status(200).json({
