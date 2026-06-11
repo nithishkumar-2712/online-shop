@@ -87,7 +87,7 @@ connect();
 app.use("/public",express.static("public"))
 app.use(
   cors({
-    origin:"https://online-shop-nk78-jcprcsi7w-nithishkumar-2712s-projects.vercel.app/",
+    origin: "https://online-shop-nk78-jcprcsi7w-nithishkumar-2712s-projects.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
